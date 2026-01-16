@@ -7,6 +7,28 @@
 }
 
 
+/* HEADER */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: gray;
+  padding: 15px 30px;
+  height: 80px;
+ 
+}
+
+.logo img {
+  width: 95px;     /* logo size */
+  height: 95px;
+  object-fit: cover; /* no stretch */
+  border-radius: 50%; /* circle */
+  background: gray;
+  padding: 5px;
+  margin-right: 20px;
+  
+}
+
 /* Navbar */
 .navbar {
   background-color: gray;
@@ -15,12 +37,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-}
-
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-  font-style: italic;
 }
 
 .menu {
