@@ -8,76 +8,103 @@
 
 /* NAVBAR BASE */
 .navbar {
-  background: #8c8c8c;
-  padding: 10px 0 0 40px;
+  background: white;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 
 .nav-inner {
   max-width: 1200px;
+  width: 100%;
   margin: auto;
-  padding: 0 40px;
-
+  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+
 .logo img {
   height: 55px;
+  display: block;
 }
 
 /* MENU */
 .menu {
   list-style: none;
   display: flex;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-  padding-left: 40px;
-}
-
-.menu li :hover{
-  color: black;
+  gap: 24px;
 }
 
 .menu li a {
-  color: white;
+  color: #222;
   text-decoration: none;
   font-weight: 500;
 }
 
+
+.menu li a:hover {
+  color: #ff9900;
+}
+
+body {
+  background: #f5f6fa;
+}
+
+
 /* Main Content */
 .container {
-  padding: 40px;
-  min-height: 70vh;
+  padding: 20px 40px;
+  background: transparent;
 }
+
 
 /* PROJECT CARD */
 .project {
   display: flex;
   gap: 20px;
-  background: #f6f3ff;
-  padding: 15px;
-  margin-bottom: 20px;
-  border-radius: 10px;
+  background: white;
+  padding: 18px;
+  margin-bottom: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
 }
+
+.project:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+}
+
 
 .project img {
   width: 300px;
-  height: auto;          /* 🔥 FULL IMAGE NO CUT */
-  border-radius: 8px;
+  height: auto;
+  border-radius: 12px;
 }
+
+.project:first-child {
+  margin-top: 0;
+}
+
 /* Footer */
 .footer {
-  background-color: gray;
-  color: white;
+  background-color: #111;
+  color: #aaa;
   text-align: center;
-  padding: 15px;
+  padding: 25px;
+  font-size: 14px;
 }
 
 /* for mobile */
 
 @media (max-width: 600px) {
+
+  .navbar {
+    height: 60px;
+  }
 
   .nav-inner {
     display: flex;
@@ -86,8 +113,7 @@
   }
 
   .logo img {
-    height: 40px;
-    padding-left: 15px;
+    height: 36px;
   }
 
   .menu {
@@ -109,6 +135,9 @@
     text-align: center;
   }
 
+  .project:hover {
+  transform: none;
+  }
   .project img {
     width: 100%;
     max-width: 320px;
