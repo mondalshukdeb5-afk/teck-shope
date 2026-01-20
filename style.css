@@ -71,6 +71,8 @@ body {
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   transition: 0.3s ease;
+  text-decoration: none;
+  list-style: none;
 }
 
 .project:hover {
@@ -87,6 +89,16 @@ body {
 
 .project:first-child {
   margin-top: 0;
+}
+
+.project a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+a:focus {
+  outline: none;
 }
 
 /* Footer */
