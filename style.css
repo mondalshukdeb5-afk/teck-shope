@@ -73,6 +73,7 @@ body {
   transition: 0.3s ease;
   text-decoration: none;
   list-style: none;
+  align-items: flex-start; /* prevents weird stretching */
 }
 
 .project:hover {
@@ -99,6 +100,80 @@ body {
 
 a:focus {
   outline: none;
+}
+
+.desc {
+  flex: 1;
+  min-width: 0;
+}
+
+.desc p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+}
+
+/* ===== GOOGLE STYLE IMAGE PREVIEW ===== */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 100;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.preview-panel {
+  position: fixed;
+  top: 0;
+  right: -700px;
+  width: 700px;
+  height: 100vh;
+  background: #fff;
+  padding: 20px;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+  transition: 0.4s ease;
+  z-index: 101;
+  overflow-y: auto;
+}
+
+.preview-panel.active {
+  right: 0;
+}
+
+.preview-panel img {
+  width: 85%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.preview-panel h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.preview-panel p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  margin-top: 10px;
 }
 
 /* Footer */
@@ -169,6 +244,11 @@ a:focus {
   .project img {
     width: 100%;
     max-width: 320px;
+  }
+
+  .preview-panel,
+  .overlay {
+    display: none;
   }
 
   .footer-inner {
