@@ -13,6 +13,9 @@
   display: flex;
   justify-content: space-between;
   box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-inner {
@@ -27,7 +30,8 @@
 
 
 .logo img {
-  height: 55px;
+  height: 60px;
+  width: 60px;
   display: block;
 }
 
@@ -208,6 +212,7 @@ a:focus {
 
   .navbar {
     height: 60px;
+    position: fixed;
   }
 
   .nav-inner {
@@ -217,12 +222,13 @@ a:focus {
   }
 
   .logo img {
-    height: 36px;
+    height: 45px;
+    width: 45px;
   }
 
   .menu {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     padding-right: 20px;
   }
 
