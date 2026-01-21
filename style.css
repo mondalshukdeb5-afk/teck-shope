@@ -83,7 +83,8 @@ body {
 
 
 .project img {
-  width: 300px;
+  width: 320px; /* slightly bigger */
+  max-width: 40%;
   height: auto;
   border-radius: 12px;
 }
