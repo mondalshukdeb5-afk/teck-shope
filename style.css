@@ -50,7 +50,7 @@
 
 
 .menu li a:hover {
-  color: #ff9900;
+  color: rgb(39, 158, 255);
 }
 
 body {
@@ -64,6 +64,15 @@ body {
   background: transparent;
 }
 
+.desc a{
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;  
+
+}
+.desc a:hover {
+  color: rgb(39, 158, 255);
+}
 
 /* PROJECT CARD */
 .project {
@@ -112,10 +121,11 @@ a:focus {
   min-width: 0;
 }
 
-.desc p {
+.desc a {
   word-wrap: break-word;
   overflow-wrap: break-word;
   line-height: 1.6;
+  color: rgb(0, 175, 23);
 }
 
 /* ===== GOOGLE STYLE IMAGE PREVIEW ===== */
@@ -157,7 +167,7 @@ a:focus {
   width: 85%;
   height: auto;
   border-radius: 12px;
-  margin-bottom: 15px;
+  margin-top: 60px;
 }
 
 .preview-panel h3 {
@@ -166,13 +176,13 @@ a:focus {
   color: #222;
 }
 
-.close-btn {
+/* .close-btn {
   position: absolute;
   top: 10px;
   right: 15px;
   font-size: 28px;
   cursor: pointer;
-}
+} */
 
 .preview-panel p {
   font-size: 14px;
@@ -212,7 +222,9 @@ a:focus {
 
   .navbar {
     height: 60px;
-    position: fixed;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
 
   .nav-inner {

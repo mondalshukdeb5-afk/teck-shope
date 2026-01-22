@@ -33,21 +33,42 @@
 
     <!-- project -->
  <div class="project">
-        <img src="images/false-ceiling-worker.jpg" alt="Profile light false ceiling design in Kolkata"loading="lazy">
+        <img src="images/false-ceiling-worker.jpg" 
+        alt="Profile light false ceiling design in Kolkata"
+        loading="lazy"
+        onclick="openPreview(
+          this.src, 
+        'False Ceiling Work',
+        'We provide complete electrical services including wiring, lighting installation, repairs, and maintenance. All work is done with proper safety standards and high-quality materials to ensure long-lasting and secure electrical systems.'
+ )">
         <div class="desc">
           <h3>false ceiling worker</h3>
         </div>
       </div>
     <!-- project -->
  <div class="project">
-        <img src="images/electrician.jpg" alt="Profile light false ceiling design in Kolkata"loading="lazy">
+        <img src="images/electrician.jpg"
+         alt="Profile light false ceiling design in Kolkata"
+         loading="lazy"
+         onclick="openPreview(
+          this.src,
+          'Electrical Work',
+          'We provide complete electrical services including wiring, lighting installation, repairs, and maintenance. All work is done with proper safety standards and high-quality materials to ensure long-lasting and secure electrical systems.'
+          )">
         <div class="desc">
           <h3>electrician</h3>
         </div>
       </div>
     <!-- project -->
  <div class="project">
-        <img src="images/painter.jpg" alt="Profile light false ceiling design in Kolkata"loading="lazy">
+        <img src="images/painter.jpg" 
+        alt="Profile light false ceiling design in Kolkata"
+        loading="lazy"
+                 onclick="openPreview(
+          this.src,
+          'Painting Services',
+          'We offer professional interior and exterior painting services with smooth finishing and long-lasting colors. From wall preparation to final coating, we ensure a clean, elegant, and premium look for your space.'
+          )">
         <div class="desc">
           <h3>painter</h3>
         </div>
@@ -74,4 +95,48 @@
 
 
 </body>
+
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="closePreview()"></div>
+
+<!-- SIDE PREVIEW PANEL -->
+<div class="preview-panel" id="previewPanel">
+  <!-- <span class="close-btn" onclick="closePreview()"> × </span> -->
+  <img id="previewImage">
+  <h3 id="previewTitle"></h3>
+  <p id="previewDesc"></p>
+</div>
+
+<script>
+
+  function openPreview(img, title, desc = "") {
+
+    // 📱 MOBILE → open new page
+    if (window.innerWidth <= 600) {
+      const url =
+        "preview.html" +
+        "?img=" + encodeURIComponent(img) +
+        "&title=" + encodeURIComponent(title) +
+        "&desc=" + encodeURIComponent(desc);
+
+      window.location.href = url;
+      return;
+    }
+
+    // 💻 DESKTOP → side preview panel
+    document.getElementById("previewImage").src = img;
+    document.getElementById("previewTitle").innerText = title;
+    document.getElementById("previewDesc").innerText = desc;
+
+    document.getElementById("overlay").classList.add("active");
+    document.getElementById("previewPanel").classList.add("active");
+  }
+
+  function closePreview() {
+    document.getElementById("overlay").classList.remove("active");
+    document.getElementById("previewPanel").classList.remove("active");
+  }
+
+</script>
 </html>
