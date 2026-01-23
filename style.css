@@ -268,6 +268,7 @@ a:focus {
   .preview-panel,
   .overlay {
     display: none;
+    border: #111;
   }
 
   .footer-inner {
