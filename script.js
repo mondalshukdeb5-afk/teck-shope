@@ -26,3 +26,24 @@
     document.getElementById("overlay").classList.remove("active");
     document.getElementById("previewPanel").classList.remove("active");
   }
+
+  const reveals = document.querySelectorAll(".project");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.15 });
+
+reveals.forEach((card, index) => {
+  card.classList.add("reveal");
+
+  // optional: alternate left/right
+  if(index % 2 === 1){
+    card.classList.add("right");
+  }
+
+  observer.observe(card);
+});
